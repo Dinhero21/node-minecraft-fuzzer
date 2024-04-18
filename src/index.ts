@@ -16,7 +16,7 @@ const HOST = process.env.HOST || '0.0.0.0'
 const PORT = Number(process.env.PORT) || 25565
 const INTERVAL = Number(process.env.INTERVAL) || 100
 
-const SLEEP = INTERVAL < 0
+const SLEEP = INTERVAL > 0
 
 const OPTIONS = {
   host: HOST,
