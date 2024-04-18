@@ -38,6 +38,7 @@
   },
   "dependencies": {
     "minecraft-protocol": "^1.46.0",
-    "scripty": "^2.1.1"
+    "scripty": "^2.1.1",
+    "wait-port": "^1.1.0"
   }
 }

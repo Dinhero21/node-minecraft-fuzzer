@@ -1,5 +1,6 @@
 import { setTimeout as sleep } from 'timers/promises'
 import { createClient } from 'minecraft-protocol'
+import wait from 'wait-port'
 
 interface ServerTabCompletePacketData {
   transactionId: number
@@ -11,9 +12,9 @@ interface ServerTabCompletePacketData {
   }>
 }
 
-const HOST = process.env.HOST ?? '127.0.0.1'
-const PORT = Number(process.env.PORT) ?? 25565
-const INTERVAL = Number(process.env.INTERVAL) ?? 100
+const HOST = process.env.HOST || '127.0.0.1'
+const PORT = Number(process.env.PORT) || 25565
+const INTERVAL = Number(process.env.INTERVAL) || 100
 
 const SLEEP = INTERVAL < 0
 
@@ -22,6 +23,11 @@ const OPTIONS = {
   port: PORT,
   username: 'Fuzzer'
 }
+
+await wait({
+  host: HOST,
+  port: PORT
+})
 
 while (true) {
   const client = createClient(OPTIONS)
