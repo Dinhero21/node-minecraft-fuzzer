@@ -12,7 +12,7 @@ interface ServerTabCompletePacketData {
   }>
 }
 
-const HOST = process.env.HOST || '127.0.0.1'
+const HOST = process.env.HOST || '0.0.0.0'
 const PORT = Number(process.env.PORT) || 25565
 const INTERVAL = Number(process.env.INTERVAL) || 100
 
